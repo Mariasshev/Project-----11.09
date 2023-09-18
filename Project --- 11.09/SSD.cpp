@@ -7,32 +7,27 @@
 using namespace std;
 
 //initializer
-SSD::SSD() :model(nullptr), price(0) {}
+SSD::SSD() :ssd_model(nullptr), ssd_price(0) {}
 
-SSD::SSD(char* m, double p) :price(p), model(m) {
-	price = p;
-	model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m) + 1, m);
-}
 
 void SSD::SetModel(const char* m)
 {
-	this->model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m) + 1, m);
+	this->ssd_model = new char[strlen(m) + 1];
+	strcpy_s(ssd_model, strlen(m) + 1, m);
 }
 void SSD::SetPrice(double p)
 {
-	this->price = p;
+	this->ssd_price = p;
 }
 char* SSD::GetModel()
 {
-	return this->model;
+	return this->ssd_model;
 }
 double SSD::GetPrice()
 {
-	return price;
+	return ssd_price;
 }
 
 SSD::~SSD() {
-	delete[] model;
+	delete[] ssd_model;
 }

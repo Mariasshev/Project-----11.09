@@ -7,30 +7,25 @@
 using namespace std;
 
 //initializer
-RAM::RAM() :model(nullptr), price(0) {}
+RAM::RAM() :ram_model(nullptr), ram_price(0) {}
 
-RAM::RAM(char* m, double p) :price(p), model(m) {
-	price = p;
-	model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m) + 1, m);
-}
 void RAM::SetModel(const char* m)
 {
-	this->model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m) + 1, m);
+	this->ram_model = new char[strlen(m) + 1];
+	strcpy_s(ram_model, strlen(m) + 1, m);
 }
 void RAM::SetPrice(double p)
 {
-	this->price = p;
+	this->ram_price = p;
 }
 char* RAM::GetModel()
 {
-	return this->model;
+	return this->ram_model;
 }
 double RAM::GetPrice()
 {
-	return price;
+	return ram_price;
 }
 RAM::~RAM() {
-	delete[] model;
+	delete[] ram_model;
 }

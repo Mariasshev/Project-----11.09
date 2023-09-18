@@ -1,11 +1,11 @@
 #pragma once
 class SSD {
 private:
-	char* model;
-	double price;
+	char* ssd_model;
+	double ssd_price;
 public:
 	SSD();
-	SSD(char* m, double p);
+	SSD(const char* m, double p);
 	void SetModel(const char* m);
 	void SetPrice(double price);
 	char* GetModel();

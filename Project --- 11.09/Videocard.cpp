@@ -7,31 +7,26 @@
 using namespace std;
 
 //initializer
-Videocard::Videocard() :model(nullptr), price(0) {}
+Videocard::Videocard() :video_model(nullptr), video_price(0) {}
 
-Videocard::Videocard(char* m, double p) :price(p), model(m) {
-	price = p;
-	model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m) + 1, m);
-}
 
 void Videocard::SetModel(const char* m)
 {
-	this->model = new char[strlen(m) + 1];
-	strcpy_s(model, strlen(m) + 1, m);
+	this->video_model = new char[strlen(m) + 1];
+	strcpy_s(video_model, strlen(m) + 1, m);
 }
 void Videocard::SetPrice(double p)
 {
-	this->price = p;
+	this->video_price = p;
 }
 char* Videocard::GetModel()
 {
-	return this->model;
+	return this->video_model;
 }
 double Videocard::GetPrice()
 {
-	return price;
+	return video_price;
 }
 Videocard::~Videocard() {
-	delete[] model;
+	delete[] video_model;
 }

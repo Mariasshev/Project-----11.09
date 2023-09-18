@@ -2,11 +2,11 @@
 class CPU
 {
 private:
-	char* model;
-	double price;
+	char* cpu_model;
+	double cpu_price;
 public:
 	CPU();
-	CPU(char* m, double p);
+	CPU(const char* m, double p);
 	void SetModel(const char* m);
 	void SetPrice(double price);
 	char* GetModel();

@@ -2,11 +2,11 @@
 class Videocard
 {
 private:
-	char* model;
-	double price;
+	char* video_model;
+	double video_price;
 public:
 	Videocard();
-	Videocard(char* m, double p);
+	Videocard(const char* m, double p);
 	void SetModel(const char* m);
 	void SetPrice(double price);
 	char* GetModel();
