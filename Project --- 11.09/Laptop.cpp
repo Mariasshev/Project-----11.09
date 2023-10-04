@@ -41,9 +41,10 @@ void Laptop::PrintInf()
 	cout << "\n\tSSD: \tmodel: " << ssd.GetModel() << "\tprice: " << ssd.GetPrice() << endl;
 	cout << "\n\tVideocard: \tmodel: " << video_card.GetModel() << "\tprice: " << video_card.GetPrice() << endl;
 	cout << "\n\tRAM: \tmodel: " << ram.GetModel() << "\tprice: " << ram.GetPrice() << endl;
+	hdmi->Print();
+	mouse->Print();
 	cout << "Price: " << this->price << "$" << endl;
 	cout << "Amount: " << this->count << endl;
-
 }
 
 //Delegation
@@ -87,7 +88,7 @@ RAM::RAM(const char* m, double p) {
 	strcpy_s(ram_model, strlen(m) + 1, m);
 }
 
-Laptop::Laptop(const char* name, const char* color, const char* cpu_model, double cpu_price, const char* video_model, double video_price, const char* ssd_model, double ssd_price, const char* ram_model, double ram_price) : cpu(cpu_model, cpu_price), video_card(video_model, video_price), ssd(ssd_model, ssd_price), ram(ram_model, ram_price)
+Laptop::Laptop(const char* name, const char* color, const char* cpu_model, double cpu_price, const char* video_model, double video_price, const char* ssd_model, double ssd_price, const char* ram_model, double ram_price, Mouse* m, HDMI* h) : cpu(cpu_model, cpu_price), video_card(video_model, video_price), ssd(ssd_model, ssd_price), ram(ram_model, ram_price), mouse(m), hdmi(h)
 {
 
 	this->name = new char[strlen(name) + 1];
